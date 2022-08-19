@@ -1,12 +1,12 @@
 import pygame
-
-WHITE = (255, 255, 255)
+from Settings import *
+'''WHITE = (255, 255, 255)
 GREY = (60, 60, 60)
 DARK_GREY = (45, 45, 45)
 LIGHT_GREY = (75, 75, 75)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
-YELLOW = (255, 255, 0)
+YELLOW = (255, 255, 0)'''
 
 
 class Button:
@@ -35,7 +35,8 @@ class Button:
         self.height = height
         self.pressed = False
         self.onClick = self.clickDummy
-        self.onClick = click
+        if click is not None:
+            self.onClick = click
 
     def clickDummy(self):
         pass
@@ -59,7 +60,6 @@ class Button:
                     self.pressed = True
             else:
                 if self.pressed:
-                    print('Im pressed')
                     self.onClick()
                     self.pressed = False
         else:
