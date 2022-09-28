@@ -222,14 +222,17 @@ def startRandomGame():
 def back2MainMenu():
     mainMenu()
 
+
 def quitThatGame():
     global running
     global runningDifficultyMenu
     global runningMainMenu
-    running =False
+    running = False
     runningMainMenu = False
     runningDifficultyMenu = False
     return
+
+
 def mainMenu():
     global runningMainMenu
     global runningDifficultyMenu
@@ -314,7 +317,7 @@ def blink(window):
 if __name__ == '__main__':
     suceed = None
     emptyCell = True
-    showErrors = True
+    showErrors = False
     actual_background = BACKGROUND
     pygame.init()
     win = pygame.display.set_mode((EDGE, EDGE))
